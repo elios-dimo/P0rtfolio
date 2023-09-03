@@ -1,0 +1,133 @@
+nav {
+  border-bottom: solid 0.2px var(--col-5);
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+  top: 0rem;
+  padding: 0.4rem;
+  background-color: var(--col-1);
+}
+.nav_container {
+  height: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  padding: 2rem;
+  z-index: 100;
+}
+
+.nav_container h2 {
+  font-size: 1.8rem;
+  transition: all 0.2s ease;
+}
+.nav_container h2:hover {
+  color: var(--col-5);
+}
+
+.menu_items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+.menu {
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.menu:hover {
+  color: var(--col-5);
+}
+
+.menu_icon {
+  font-size: 1.8rem;
+  color: var(--col-4);
+  cursor: pointer;
+  display: none;
+  transition: all 0.2s ease;
+}
+.menu_icon:hover {
+  color: var(--col-5);
+}
+
+@media only screen and (max-width: 908px) {
+  .menu_items {
+    display: none;
+  }
+  .menu_icon {
+    display: block;
+  }
+
+  .menu {
+    text-align: center;
+    width: 100%;
+    border-bottom: solid 0.2px var(--col-5);
+  }
+  .menu_items_open {
+    position: absolute;
+    background-color: var(--col-1);
+    top: 4.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--col-1);
+    padding: 0.4rem;
+    z-index: 1;
+    font-size: 1.4rem;
+    -webkit-animation: menu_items_open 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: menu_items_open 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    transition: all 0.1s ease;
+  }
+
+  @-webkit-keyframes menu_items_open {
+    0% {
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes menu_items_open {
+    0% {
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 558px) {
+  .nav_container h2 {
+    font-size: 1.4rem;
+    transition: all 0.2s ease;
+  }
+
+  .menu_icon {
+    font-size: 1.4rem;
+  }
+
+  .menu {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 485px) {
+  .menu {
+    font-size: 1rem;
+  }
+}
